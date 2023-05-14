@@ -21,7 +21,6 @@ FROM travel_ireland
 WHERE Reason_Journey IS 'Holiday'
 GROUP BY Quarter;
 
-/* testing comment */
 
 SELECT Domestic,Reason_Journey,Quarter,ROUND(SUM(VALUE)/24) AS Days_Traveled
 FROM travel_ireland
@@ -33,4 +32,31 @@ SELECT Statistic_Label,Domestic,Quarter,ROUND(SUM(VALUE)) AS Expenditure_in_mill
 FROM travel_ireland
 WHERE Statistic_Label='Estimated Expenditure by Irish Residents'
 GROUP BY Quarter,Domestic,Statistic_Label;
+
+SELECT Reason_Journey,Quarter,ROUND(SUM(VALUE)/24) AS Days_Traveled
+FROM travel_ireland
+WHERE substr(Quarter,1,4) ='2020'
+and Domestic='Domestic'
+GROUP BY Reason_Journey,Quarter;
+
+
+SELECT Reason_Journey,Quarter,ROUND(SUM(VALUE)/24) AS Days_Traveled
+FROM travel_ireland
+WHERE substr(Quarter,1,4) ='2019'
+and Domestic='Domestic'
+GROUP BY Reason_Journey,Quarter;
+
+
+SELECT Reason_Journey,Quarter,ROUND(SUM(VALUE)/24) AS Days_Traveled
+FROM travel_ireland
+WHERE substr(Quarter,1,4) ='2021'
+and Domestic='Domestic'
+GROUP BY Reason_Journey,Quarter;
+
+
+SELECT Reason_Journey,Quarter,ROUND(SUM(VALUE)/24) AS Days_Traveled
+FROM travel_ireland
+WHERE substr(Quarter,1,4) ='2022'
+and Domestic='Domestic'
+GROUP BY Reason_Journey,Quarter;
 
